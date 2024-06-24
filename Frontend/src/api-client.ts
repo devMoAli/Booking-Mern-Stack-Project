@@ -1,4 +1,4 @@
-import { SignInFormData } from "./pages/SignIn";
+import { SignInFormData } from "./Pages/SignIn";
 // import {
 //   HotelSearchResponse,
 //   HotelType,
@@ -7,7 +7,7 @@ import { SignInFormData } from "./pages/SignIn";
 // } from "../../backend/src/shared/types";
 // import { BookingFormData } from "./forms/BookingForm/BookingForm";
 
-import { RegisterFormData } from "./pages/Register";
+import { RegisterFormData } from "./Pages/Register";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
 // validate Token //
@@ -80,9 +80,6 @@ export const signOut = async () => {
 //   }
 //   return response.json();
 // };
-
-
-
 
 // export const addMyHotel = async (hotelFormData: FormData) => {
 //   const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {

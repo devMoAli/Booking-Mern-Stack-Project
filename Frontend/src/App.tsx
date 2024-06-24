@@ -7,9 +7,9 @@ import {
 } from "react-router-dom";
 
 import React from "react";
-import MyBookings from "./pages/MyBookings";
-import Register from "./pages/Register";
-import SignIn from "./pages/SignIn";
+import MyBookings from "./Pages/MyBookings";
+import Register from "./Pages/Register";
+import SignIn from "./Pages/SignIn";
 
 const App = () => {
   return (
