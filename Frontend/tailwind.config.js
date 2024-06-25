@@ -6,6 +6,10 @@ export default {
       fontFamily: {
         nunito: ["Nunito", "sans-serif"],
       },
+      underlineOffset: {
+        4: '4px',
+        8: '8px',
+      },
       colors: {
         indigo: {
           50: "#e0f1ff",
@@ -28,5 +32,17 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.underline-offset-4': {
+          'text-underline-offset': '4px',
+        },
+        '.underline-offset-8': {
+          'text-underline-offset': '8px',
+        },
+      }
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    },
+  ],
 };

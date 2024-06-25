@@ -10,8 +10,11 @@ import React from "react";
 import MyBookings from "./Pages/MyBookings";
 import Register from "./Pages/Register";
 import SignIn from "./Pages/SignIn";
+import AddHotel from "./Pages/AddHotel";
+import { useAppContext } from "./Context/AppContext";
 
 const App = () => {
+  const { isLoggedIn } = useAppContext();
   return (
     <Router>
       <Routes>
@@ -55,7 +58,18 @@ const App = () => {
             </Layout>
           }
         />
-
+      {isLoggedIn && (
+        <>
+        <Route
+         path="/add-hotel"
+         element={
+           <Layout>
+             <AddHotel />
+           </Layout>
+         }
+       />
+       </>
+      )}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
