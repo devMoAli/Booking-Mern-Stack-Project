@@ -86,159 +86,159 @@ export const addMyHotel = async (hotelFormData: FormData) => {
   return response.json();
 };
 
-export const fetchMyHotels = async (): Promise<HotelType[]> => {
-  const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
-    credentials: "include",
-  });
+// export const fetchMyHotels = async (): Promise<HotelType[]> => {
+//   const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
+//     credentials: "include",
+//   });
 
-  if (!response.ok) {
-    throw new Error("Error fetching hotels");
-  }
+//   if (!response.ok) {
+//     throw new Error("Error fetching hotels");
+//   }
 
-  return response.json();
-};
+//   return response.json();
+// };
 
-export const fetchMyHotelById = async (hotelId: string): Promise<HotelType> => {
-  const response = await fetch(`${API_BASE_URL}/api/my-hotels/${hotelId}`, {
-    credentials: "include",
-  });
+// export const fetchMyHotelById = async (hotelId: string): Promise<HotelType> => {
+//   const response = await fetch(`${API_BASE_URL}/api/my-hotels/${hotelId}`, {
+//     credentials: "include",
+//   });
 
-  if (!response.ok) {
-    throw new Error("Error fetching Hotels");
-  }
+//   if (!response.ok) {
+//     throw new Error("Error fetching Hotels");
+//   }
 
-  return response.json();
-};
+//   return response.json();
+// };
 
-export const updateMyHotelById = async (hotelFormData: FormData) => {
-  const response = await fetch(
-    `${API_BASE_URL}/api/my-hotels/${hotelFormData.get("hotelId")}`,
-    {
-      method: "PUT",
-      body: hotelFormData,
-      credentials: "include",
-    }
-  );
+// export const updateMyHotelById = async (hotelFormData: FormData) => {
+//   const response = await fetch(
+//     `${API_BASE_URL}/api/my-hotels/${hotelFormData.get("hotelId")}`,
+//     {
+//       method: "PUT",
+//       body: hotelFormData,
+//       credentials: "include",
+//     }
+//   );
 
-  if (!response.ok) {
-    throw new Error("Failed to update Hotel");
-  }
+//   if (!response.ok) {
+//     throw new Error("Failed to update Hotel");
+//   }
 
-  return response.json();
-};
+//   return response.json();
+// };
 
-export type SearchParams = {
-  destination?: string;
-  checkIn?: string;
-  checkOut?: string;
-  adultCount?: string;
-  childCount?: string;
-  page?: string;
-  facilities?: string[];
-  types?: string[];
-  stars?: string[];
-  maxPrice?: string;
-  sortOption?: string;
-};
+// export type SearchParams = {
+//   destination?: string;
+//   checkIn?: string;
+//   checkOut?: string;
+//   adultCount?: string;
+//   childCount?: string;
+//   page?: string;
+//   facilities?: string[];
+//   types?: string[];
+//   stars?: string[];
+//   maxPrice?: string;
+//   sortOption?: string;
+// };
 
-export const searchHotels = async (
-  searchParams: SearchParams
-): Promise<HotelSearchResponse> => {
-  const queryParams = new URLSearchParams();
-  queryParams.append("destination", searchParams.destination || "");
-  queryParams.append("checkIn", searchParams.checkIn || "");
-  queryParams.append("checkOut", searchParams.checkOut || "");
-  queryParams.append("adultCount", searchParams.adultCount || "");
-  queryParams.append("childCount", searchParams.childCount || "");
-  queryParams.append("page", searchParams.page || "");
+// export const searchHotels = async (
+//   searchParams: SearchParams
+// ): Promise<HotelSearchResponse> => {
+//   const queryParams = new URLSearchParams();
+//   queryParams.append("destination", searchParams.destination || "");
+//   queryParams.append("checkIn", searchParams.checkIn || "");
+//   queryParams.append("checkOut", searchParams.checkOut || "");
+//   queryParams.append("adultCount", searchParams.adultCount || "");
+//   queryParams.append("childCount", searchParams.childCount || "");
+//   queryParams.append("page", searchParams.page || "");
 
-  queryParams.append("maxPrice", searchParams.maxPrice || "");
-  queryParams.append("sortOption", searchParams.sortOption || "");
+//   queryParams.append("maxPrice", searchParams.maxPrice || "");
+//   queryParams.append("sortOption", searchParams.sortOption || "");
 
-  searchParams.facilities?.forEach((facility) =>
-    queryParams.append("facilities", facility)
-  );
+//   searchParams.facilities?.forEach((facility) =>
+//     queryParams.append("facilities", facility)
+//   );
 
-  searchParams.types?.forEach((type) => queryParams.append("types", type));
-  searchParams.stars?.forEach((star) => queryParams.append("stars", star));
+//   searchParams.types?.forEach((type) => queryParams.append("types", type));
+//   searchParams.stars?.forEach((star) => queryParams.append("stars", star));
 
-  const response = await fetch(
-    `${API_BASE_URL}/api/hotels/search?${queryParams}`
-  );
+//   const response = await fetch(
+//     `${API_BASE_URL}/api/hotels/search?${queryParams}`
+//   );
 
-  if (!response.ok) {
-    throw new Error("Error fetching hotels");
-  }
+//   if (!response.ok) {
+//     throw new Error("Error fetching hotels");
+//   }
 
-  return response.json();
-};
+//   return response.json();
+// };
 
-export const fetchHotels = async (): Promise<HotelType[]> => {
-  const response = await fetch(`${API_BASE_URL}/api/hotels`);
-  if (!response.ok) {
-    throw new Error("Error fetching hotels");
-  }
-  return response.json();
-};
+// export const fetchHotels = async (): Promise<HotelType[]> => {
+//   const response = await fetch(`${API_BASE_URL}/api/hotels`);
+//   if (!response.ok) {
+//     throw new Error("Error fetching hotels");
+//   }
+//   return response.json();
+// };
 
-export const fetchHotelById = async (hotelId: string): Promise<HotelType> => {
-  const response = await fetch(`${API_BASE_URL}/api/hotels/${hotelId}`);
-  if (!response.ok) {
-    throw new Error("Error fetching Hotels");
-  }
+// export const fetchHotelById = async (hotelId: string): Promise<HotelType> => {
+//   const response = await fetch(`${API_BASE_URL}/api/hotels/${hotelId}`);
+//   if (!response.ok) {
+//     throw new Error("Error fetching Hotels");
+//   }
 
-  return response.json();
-};
+//   return response.json();
+// };
 
-export const createPaymentIntent = async (
-  hotelId: string,
-  numberOfNights: string
-): Promise<PaymentIntentResponse> => {
-  const response = await fetch(
-    `${API_BASE_URL}/api/hotels/${hotelId}/bookings/payment-intent`,
-    {
-      credentials: "include",
-      method: "POST",
-      body: JSON.stringify({ numberOfNights }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+// export const createPaymentIntent = async (
+//   hotelId: string,
+//   numberOfNights: string
+// ): Promise<PaymentIntentResponse> => {
+//   const response = await fetch(
+//     `${API_BASE_URL}/api/hotels/${hotelId}/bookings/payment-intent`,
+//     {
+//       credentials: "include",
+//       method: "POST",
+//       body: JSON.stringify({ numberOfNights }),
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     }
+//   );
 
-  if (!response.ok) {
-    throw new Error("Error fetching payment intent");
-  }
+//   if (!response.ok) {
+//     throw new Error("Error fetching payment intent");
+//   }
 
-  return response.json();
-};
+//   return response.json();
+// };
 
-export const createRoomBooking = async (formData: BookingFormData) => {
-  const response = await fetch(
-    `${API_BASE_URL}/api/hotels/${formData.hotelId}/bookings`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify(formData),
-    }
-  );
+// export const createRoomBooking = async (formData: BookingFormData) => {
+//   const response = await fetch(
+//     `${API_BASE_URL}/api/hotels/${formData.hotelId}/bookings`,
+//     {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       credentials: "include",
+//       body: JSON.stringify(formData),
+//     }
+//   );
 
-  if (!response.ok) {
-    throw new Error("Error booking room");
-  }
-};
+//   if (!response.ok) {
+//     throw new Error("Error booking room");
+//   }
+// };
 
-export const fetchMyBookings = async (): Promise<HotelType[]> => {
-  const response = await fetch(`${API_BASE_URL}/api/my-bookings`, {
-    credentials: "include",
-  });
+// export const fetchMyBookings = async (): Promise<HotelType[]> => {
+//   const response = await fetch(`${API_BASE_URL}/api/my-bookings`, {
+//     credentials: "include",
+//   });
 
-  if (!response.ok) {
-    throw new Error("Unable to fetch bookings");
-  }
+//   if (!response.ok) {
+//     throw new Error("Unable to fetch bookings");
+//   }
 
-  return response.json();
-};
+//   return response.json();
+// };
