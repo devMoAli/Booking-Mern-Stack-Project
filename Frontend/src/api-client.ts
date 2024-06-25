@@ -1,9 +1,9 @@
 import { SignInFormData } from "./Pages/SignIn";
 import {
-  HotelSearchResponse,
+  // HotelSearchResponse,
   HotelType,
-  PaymentIntentResponse,
-  UserType,
+  // PaymentIntentResponse,
+  // UserType,
 } from "../../backend/src/shared/types";
 // import { BookingFormData } from "./forms/BookingForm/BookingForm";
 
