@@ -33,12 +33,12 @@ const ImagesSection = () => {
           <div className="grid grid-cols-6 gap-4">
             {existingImageUrls.map((url) => (
               <div className="relative group" key={url}>
-                <img src={url} className="min-h-full object-cover" />
+                <img src={url} className="min-h-full object-cover rounded " />
                 <button
                   onClick={(event) => handleDelete(event, url)}
                   className="absolute cursor-pointer inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 text-white"
                 >
-                  Delete
+                  Delete Image
                 </button>
               </div>
             ))}

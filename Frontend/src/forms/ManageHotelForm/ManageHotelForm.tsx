@@ -27,9 +27,10 @@ type Props = {
   hotel?: HotelType;
   onSave: (hotelFormData: FormData) => void;
   isLoading: boolean;
+  isEdit: boolean; 
 };
 
-const ManageHotelForm = ({ onSave, isLoading, hotel }: Props) => {
+const ManageHotelForm = ({ onSave, isLoading, hotel, isEdit }: Props) => {
   const formMethods = useForm<HotelFormData>();
   const { handleSubmit, reset } = formMethods;
 
@@ -72,7 +73,7 @@ const ManageHotelForm = ({ onSave, isLoading, hotel }: Props) => {
   return (
     <FormProvider {...formMethods}>
       <form className="flex flex-col gap-10" onSubmit={onSubmit}>
-        <DetailsSection />
+        <DetailsSection isEdit={isEdit} />
         <TypeSection />
         <FacilitiesSection />
         <GuestsSection />

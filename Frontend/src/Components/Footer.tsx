@@ -1,3 +1,5 @@
+import React from "react";
+
 const Footer = () => {
   return (
     <div className="bg-indigo-800 font-nunito py-10">

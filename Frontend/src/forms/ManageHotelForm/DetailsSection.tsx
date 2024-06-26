@@ -2,7 +2,10 @@ import { useFormContext } from "react-hook-form";
 import { HotelFormData } from "./ManageHotelForm";
 import React from "react";
 
-const DetailsSection = () => {
+type DetailsSectionProps = {
+  isEdit: boolean;
+};
+const DetailsSection = ({ isEdit }: DetailsSectionProps) => {
   const {
     register,
     formState: { errors },
@@ -10,7 +13,9 @@ const DetailsSection = () => {
 
   return (
     <div className="flex flex-col gap-4 ">
-      <h1 className="text-3xl font-bold mb-3 text-orange-500">Add Hotel 🏨 </h1>
+      <h1 className="text-3xl font-bold mb-3 text-orange-500">
+        {isEdit ? "Edit Hotel 🏨" : "Add Hotel 🏨"}
+      </h1>
       <div className="border border-gray-300 p-3 rounded">
         <h4 className="font-bold mb-2 text-gray-400 underline underline-offset-4 font-nunito">
           Hotel Details

@@ -26,12 +26,14 @@ const MyHotels = () => {
           to="/add-hotel"
           className="flex bg-indigo-700 rounded text-white text-sm font-bold p-2 hover:bg-blue-500"
         >
-          <span className="text-green-300 mr-2 font-bold"> + </span> Add Hotel
+          <span className="text-green-300 mr-2 font-bold"> + </span> Add New
+          Hotel
         </Link>
       </span>
       <div className="grid grid-cols-1 gap-8">
         {hotelData.map((hotel) => (
           <div
+            key={hotel._id}
             data-testid="hotel-card"
             className="flex flex-col justify-between border border-slate-300 rounded-lg p-6 gap-4"
           >

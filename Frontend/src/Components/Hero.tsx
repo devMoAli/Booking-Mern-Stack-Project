@@ -1,3 +1,5 @@
+import React from "react";
+
 const Hero = () => {
   return (
     <div className="bg-indigo-800 font-nunito pb-16 ">
