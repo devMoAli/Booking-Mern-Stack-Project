@@ -26,7 +26,6 @@ router.get("/search", async (req: Request, res: Response) => {
         break;
     }
 
-    
     const pageSize = 5;
     const pageNumber = parseInt(
       req.query.page ? req.query.page.toString() : "1"
