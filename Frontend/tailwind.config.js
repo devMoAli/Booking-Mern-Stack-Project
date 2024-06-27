@@ -5,10 +5,11 @@ export default {
     extend: {
       fontFamily: {
         nunito: ["Nunito", "sans-serif"],
+        poppins: ["Poppins"],
       },
       underlineOffset: {
-        4: '4px',
-        8: '8px',
+        4: "4px",
+        8: "8px",
       },
       colors: {
         indigo: {
@@ -33,16 +34,16 @@ export default {
     },
   },
   plugins: [
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       const newUtilities = {
-        '.underline-offset-4': {
-          'text-underline-offset': '4px',
+        ".underline-offset-4": {
+          "text-underline-offset": "4px",
         },
-        '.underline-offset-8': {
-          'text-underline-offset': '8px',
+        ".underline-offset-8": {
+          "text-underline-offset": "8px",
         },
-      }
-      addUtilities(newUtilities, ['responsive', 'hover'])
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
     },
   ],
 };
