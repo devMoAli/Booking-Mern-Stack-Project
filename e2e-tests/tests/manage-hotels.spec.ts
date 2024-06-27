@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Sign In" })).toBeVisible();
 
   // Perform Login
-  await page.locator("[name=email]").fill("test_register_75552@test.com");
+  await page.locator("[name=email]").fill("1@1.com");
   await page.locator("[name=password]").fill("password123");
   await page.getByRole("button", { name: "Login" }).click();
 
