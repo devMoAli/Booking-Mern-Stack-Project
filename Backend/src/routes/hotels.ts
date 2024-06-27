@@ -47,7 +47,6 @@ router.get("/search", async (req: Request, res: Response) => {
         pages: Math.ceil(total / pageSize),
       },
     };
-
     res.json(response);
   } catch (error) {
     console.log("error", error);
