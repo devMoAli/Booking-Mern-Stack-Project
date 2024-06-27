@@ -28,7 +28,6 @@ test("should allow the user to sign in", async ({ page }) => {
   await expect(page.getByRole("button", { name: "Sign Out" })).toBeVisible();
 });
 
-
 // Register Test //
 test("should allow user to register", async ({ page }) => {
   const testEmail = `test_register_${
