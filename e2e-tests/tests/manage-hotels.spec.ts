@@ -51,6 +51,7 @@ test("should allow user to add a hotel", async ({ page }) => {
     path.join(__dirname, "files", "2.png"),
   ]);
 
+  
   // Submit form
   await page.getByRole("button", { name: "Save" }).click();
 
