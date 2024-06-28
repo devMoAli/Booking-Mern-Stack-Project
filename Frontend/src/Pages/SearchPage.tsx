@@ -103,7 +103,7 @@ const SearchPage = () => {
           <select
             value={sortOption}
             onChange={(event) => setSortOption(event.target.value)}
-            className="p-2 border rounded-md"
+            className="p-2 border border-gray-300 cursor-pointer rounded-md"
           >
             <option value="">Sort By</option>
             <option value="starRating">Star Rating</option>

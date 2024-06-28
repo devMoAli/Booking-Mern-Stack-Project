@@ -8,7 +8,7 @@ const Hero = () => {
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    minHeight: "300px",
+    minHeight: "400px",
     display: "flex",
     alignItems: "center",
     fontWeight: "bold",
@@ -16,11 +16,14 @@ const Hero = () => {
   return (
     <div className="container mx-auto flex flex-col gap-2">
       <div style={backgroundStyle}>
-        <div className="bg-indigo-800 bg-opacity-50  p-8">
-          <h2 className="text-3xl text-gray-300 font-bold mt-2">
-            Find your next stay{" "}
+        <div className="bg-gray-500 bg-opacity-50  p-8">
+          <h2 className="font-raleway text-white my-2 text-4xl ">
+            The perfect home base
           </h2>
-          <p className="text-2xl text-gray-300 mt-2 font-nunito">
+          <h2 className="font-raleway text-white font-bold my-2 text-4xl">
+            for your your next special stay
+          </h2>
+          <p className="text-xl font-montserrat text-indigo-800 mt-3">
             Search low prices on hotels for your dream vacation⛱️
           </p>
         </div>

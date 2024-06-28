@@ -17,7 +17,7 @@ test("should allow the user to sign in", async ({ page }) => {
   await page.getByRole("button", { name: "Login" }).click();
 
   // Check for possible invalid credentials message
-  const errorMessage = await page.locator('.error-message-class').textContent(); // Adjust selector according to your UI
+  const errorMessage = await page.locator(".error-message-class").textContent(); // Adjust selector according to your UI
   if (errorMessage) {
     console.error("Login failed:", errorMessage);
   }
@@ -27,7 +27,7 @@ test("should allow the user to sign in", async ({ page }) => {
   await expect(page.getByRole("link", { name: "My Hotels" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Sign Out" })).toBeVisible();
 });
-
+// should show hotel search results
 test("should show hotel search results", async ({ page }) => {
   await page.goto(UI_URL);
 
@@ -37,7 +37,7 @@ test("should show hotel search results", async ({ page }) => {
   await expect(page.getByText("Hotels found in Dublin")).toBeVisible();
   await expect(page.getByText("Dublin Getaways")).toBeVisible();
 });
-
+// should show hotel detail
 test("should show hotel detail", async ({ page }) => {
   await page.goto(UI_URL);
 

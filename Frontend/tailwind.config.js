@@ -1,15 +1,30 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js, ts, jsx,tsx}"],
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontWeight: {
+        normal: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
+        extrabold: 800,
+        black: 900,
+      },
+      lineHeight: {
+        base: "1.5",
+        tall: "1.8",
+      },
       fontFamily: {
         nunito: ["Nunito", "sans-serif"],
-        poppins: ["Poppins"],
+        poppins: ["Poppins", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
       },
-      underlineOffset: {
-        4: "4px",
-        8: "8px",
+      fontSize: {
+        "5xl": ["3rem", "3.875rem"],
       },
       colors: {
         indigo: {
@@ -26,10 +41,15 @@ export default {
         },
       },
     },
-
     container: {
-      padding: {
-        md: "10rem",
+      center: true,
+      padding: "2rem",
+      screens: {
+        sm: "100%",
+        md: "100%",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     },
   },
