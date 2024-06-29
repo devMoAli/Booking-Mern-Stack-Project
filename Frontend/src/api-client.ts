@@ -197,32 +197,6 @@ export const fetchHotelById = async (hotelId: string): Promise<HotelType> => {
 
   return response.json();
 };
-
-// // create Payment Intent
-// export const createPaymentIntent = async (
-//   hotelId: string,
-//   numberOfNights: string
-// ): Promise<PaymentIntentResponse> => {
-//   const response = await fetch(
-//     ${API_BASE_URL}/api/hotels/${hotelId}/bookings/payment-intent,
-//     {
-//       credentials: "include",
-//       method: "POST",
-//       body: JSON.stringify({ numberOfNights }),
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//     }
-//   );
-
-//   if (!response.ok) {
-//     throw new Error("Error fetching payment intent");
-//   }
-
-//   return response.json();
-// };
-
-
 // create Payment Intent
 export const createPaymentIntent = async (
   hotelId: string,
@@ -243,13 +217,15 @@ export const createPaymentIntent = async (
 
     if (!response.ok) {
       const errorText = await response.text();
-      throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+      throw new Error(
+        `HTTP error! status: ${response.status}, message: ${errorText}`
+      );
     }
 
     return await response.json();
   } catch (error) {
     console.error("Failed to fetch payment intent:", error);
-    throw error; // Rethrow the error to be handled by react-query or calling code
+    throw error; 
   }
 };
 // create Room Booking

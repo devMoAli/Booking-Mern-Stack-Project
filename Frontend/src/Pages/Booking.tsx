@@ -79,7 +79,6 @@ const Booking = () => {
           />
         </Elements>
       )}
-    
     </div>
   );
 };
