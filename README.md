@@ -12,4 +12,6 @@
 
 ![Booking-MERN-Project](Hotel-Booking-project5.gif)
 
+![Booking-MERN-Project](Hotel-Booking-project6.gif)
+
 
