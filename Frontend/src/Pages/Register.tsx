@@ -31,13 +31,11 @@ const Register = () => {
       navigate("/");
     },
     onError: (error: Error) => {
-      // console.log(error.message);
       showToast({ message: error.message, type: "ERROR" });
     },
   });
 
   const onSubmit = handleSubmit((data) => {
-    // console.log("Form Data:", data);
     mutation.mutate(data);
   });
   return (

@@ -116,7 +116,7 @@ const SearchPage = () => {
           </select>
         </div>
         {hotelData?.data.map((hotel) => (
-          <SearchResultsCard hotel={hotel} />
+          <SearchResultsCard key={hotel._id} hotel={hotel} />
         ))}
         <div>
           <Pagination
@@ -129,6 +129,5 @@ const SearchPage = () => {
     </div>
   );
 };
-
 
 export default SearchPage;
